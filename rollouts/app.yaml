@@ -18,7 +18,7 @@ spec:
         app: issuegen
     spec:
       containers:
-      - image: opsmxdev/issuegen:1.3.10
+      - image: opsmxdev/issuegen:1.3.9
         name: issuegen
         ports:
         - containerPort: 80
