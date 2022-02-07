@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    run: issuegen
+  name: issuegen
+  namespace: argocd
+spec:
+  replicas: 2
+  revisionHistoryLimit: 3
+  selector:
+    matchLabels:
+      app: issuegen
+  template:
+    metadata:
+      labels:
+        app: issuegen
+    spec:
+      containers:
+      - image: opsmxdev/issuegen:1.3.10
+        name: issuegen
+        ports:
+        - containerPort: 80
